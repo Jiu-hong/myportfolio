@@ -1,0 +1,481 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  width: 100vw;
+}
+
+h1 {
+  font-size: 90px;
+}
+
+h2 {
+  font-size: 50px;
+}
+
+p {
+  font-size: 30px;
+  font-weight: 300;
+}
+
+li {
+  list-style: none;
+}
+
+.section1 {
+  position: relative;
+  margin: auto;
+  height: 100vh;
+  width: 100%;
+  background: skyblue;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+nav {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 100%;
+  width: 80%;
+  height: 100%;
+  background: rgb(7, 113, 155);
+  z-index: 100;
+  transition: transform 500ms ease-in-out;
+}
+
+.show {
+  transform: translateX(-100%);
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border: 0;
+  text-align: center;
+  padding: 0;
+}
+
+li {
+  position: relative;
+  flex: 1;
+}
+
+.section1 li a {
+  font-size: 3rem;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+}
+
+li::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+li:not(:last-of-type) {
+  border-bottom: solid 1px black;
+}
+
+li:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.information {
+  padding: 2em;
+  z-index: 1;
+}
+
+.navbutton {
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+  font-size: 2em;
+  align-self: flex-end;
+}
+
+.closebtn {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  font-size: 2em;
+  align-self: flex-end;
+  color: white;
+}
+
+.scene {
+  z-index: 0;
+}
+.cloud {
+  position: absolute;
+  width: 100px;
+  height: 60px;
+  background: red(54, 52, 52);
+  border-radius: 50%;
+  bottom: 20%;
+  right: 0;
+  box-shadow: -390px 150px 2px 2px white;
+}
+.cloud::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  bottom: 20%;
+  right: 30%;
+  box-shadow: -390px 150px 2px 2px white;
+}
+
+.cloud::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 60px;
+  background: white;
+  border-radius: 50%;
+  bottom: -10%;
+  right: 40%;
+  box-shadow: -390px 150px 2px 2px white;
+}
+
+.rainbow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 50%;
+
+  overflow: hidden;
+}
+.rainbow::after {
+  content: "";
+  position: absolute;
+  top: 89%;
+  left: 60%;
+  width: 30%;
+  height: 100%;
+
+  box-shadow: 0 0 0 0.5em mediumorchid, 0 0 0 1em mediumslateblue,
+    0 0 0 1.5em deepskyblue, 0 0 0 2em lawngreen, 0 0 0 2.5em yellow,
+    0 0 0 3em orange, 0 0 0 3.5em tomato;
+  border-radius: 100em 100em 0 0;
+}
+
+@media screen and (min-width: 860px) {
+  .section1 {
+    max-width: 1500px;
+    padding: 2em;
+  }
+  nav {
+    all: unset;
+    position: relative;
+    display: block;
+  }
+  .navbutton {
+    display: none;
+  }
+  .closebtn {
+    display: none;
+  }
+
+  ul {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .section1 li {
+    all: unset;
+  }
+
+  .section1 li:hover a,
+  .section1 li:focus a {
+    color: black;
+    border-bottom: solid black 1px;
+  }
+
+  .section1 li a {
+    color: white;
+  }
+}
+
+/* section1 end */
+.section2 {
+  display: flex;
+  background: white;
+  width: 100%;
+
+  padding: 2em;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vh), 0 100%);
+}
+
+@media (min-width: 900px) {
+  .section2 {
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vh), 0 100%);
+  }
+}
+
+.pic {
+  position: relative;
+  top: 30px;
+  width: 100px;
+  height: 100px;
+
+  background-image: url("img/whale.svg");
+  background-size: cover;
+  /* background-color: #cccccc; */
+  transition: transform 500ms ease-in-out;
+}
+.pic:hover {
+  transform: translate(30px, -30px);
+}
+
+.shadow {
+  position: relative;
+  top: 30px;
+  width: 100px;
+  height: 20px;
+  margin: 20px 0;
+  border-radius: 50%;
+  filter: blur(8px);
+  background-color: darkgray;
+  transition: transform 500ms ease-in-out, width 500ms ease-in-out,
+    filter 500ms ease-in-out;
+}
+
+.pic:hover + .shadow {
+  width: 80px;
+
+  filter: blur(10px);
+  transform: translateX(30px);
+}
+
+.desc {
+  margin-top: 1em;
+}
+
+/* section2 end */
+
+.section3 {
+  margin-top: -5vh;
+  padding: 1em;
+  padding-top: 5vh;
+  background: skyblue;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+}
+
+.section3 .title {
+  font-weight: 800;
+  text-align: end;
+}
+
+@media (min-width: 900px) {
+  .section3 {
+    margin-top: -10vh;
+
+    padding-top: 10vh;
+  }
+
+  .section3 .title {
+    font-size: 3rem;
+  }
+}
+.project-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+@media (min-width: 500px) {
+  .project-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 0.5em;
+  }
+}
+
+@media (min-width: 900px) {
+  .project-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1250px) {
+  .project-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.project {
+  height: 50vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.project img {
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+}
+
+figcaption {
+  position: absolute;
+  text-align: center;
+  top: 100%;
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  transition: top 500ms ease-in-out, height 500ms ease-in-out,
+    width 500ms ease-in-out, background-color 500ms ease-in-out;
+}
+
+figcaption h2 {
+  font-size: 2rem;
+  margin-bottom: auto;
+}
+
+figcaption p {
+  font-size: 1rem;
+}
+
+figcaption .go {
+  cursor: pointer;
+}
+
+.projectmodal {
+  display: none;
+  position: fixed;
+  top: 1em;
+  left: 1em;
+  bottom: 1em;
+  right: 1em;
+  background: white;
+  z-index: 10;
+}
+
+.projectmodal h1 {
+  font-size: 1.5rem;
+}
+
+.projectmodal p {
+  font-size: 1rem;
+}
+
+.modalheader {
+  background-size: cover;
+  height: 20vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.modalheaderone {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url(img/wallflower.jpg);
+}
+.modalheadertwo {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url(img/wallleaf.jpg);
+}
+.modalheaderthree {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url(img/plantheart.jpg);
+}
+.modalheaderfour {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url(img/seaside.jpg);
+}
+
+.modalheaderfive {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url(img/header-bg.png);
+}
+
+.modalheadersix {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527), rgba(0, 0, 0, 0.5)),
+    url(img/frame.jpg);
+}
+
+.closemodal {
+  position: fixed;
+  top: 2em;
+  right: 2em;
+}
+
+.modal-open {
+  display: block;
+  transition: display 500ms ease-in-out;
+}
+
+@keyframes modalIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes modalOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.project:hover figcaption {
+  top: 0;
+  background-color: rgba(7, 113, 155, 0.9);
+}
+
+.section4 {
+  padding: 1em;
+}
+
+.section4 {
+  text-align: center;
+}
+
+.section4 h2 {
+  color: skyblue;
+  text-transform: uppercase;
+}
+
+.section4 a {
+  font-size: 1rem;
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+
+.section4 a:hover {
+  border-bottom: 1px solid black;
+}
+
+.modalcontent {
+  text-transform: none;
+  color: black;
+  padding: 1em;
+}
+
+.modalcontent p,
+a {
+  margin: 1em;
+}
