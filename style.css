@@ -172,10 +172,10 @@ li:hover {
 }
 
 @media screen and (min-width: 860px) {
-  .section1 {
+  /* .section1 {
     max-width: 1500px;
     padding: 2em;
-  }
+  } */
   nav {
     all: unset;
     position: relative;
